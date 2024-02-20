@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Este nombre elegimos para el directorio
+nombre_carpeta="mi_carpeta"
+
+# Creamos un condicional para saber si la carpeta ya existe.
+if [ -d "$nombre_carpeta" ]; then
+    echo "La carpeta ya existe."
+else
+    # Sino está creada, se crea el directorio
+    mkdir "$nombre_carpeta"
+    
+    # Mover al directorio recién creado
+    cd "$nombre_carpeta" || exit 1
+    
+    # Creamos un bloc de notas dentro del directorio
+    touch "mi_bloque_de_notas.txt"
+    
+    # Confirmacion!!
+    echo "Carpeta y bloc de notas creados exitosamente en $(pwd)"
+fi
